@@ -1,0 +1,23 @@
+{
+  "name": "api-features",
+  "version": "1.0.0",
+  "description": "Make the pagination - sort and more api features with one line",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justmahmoud31/api-features.git"
+  },
+  "keywords": [
+    "ApiFeatures"
+  ],
+  "author": "JustMahmoud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justmahmoud31/api-features/issues"
+  },
+  "homepage": "https://github.com/justmahmoud31/api-features#readme"
+}
