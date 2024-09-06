@@ -99,7 +99,7 @@ export default class ApiFeature {
     return this;
   }
 
-  search(fields) {
+  search(fields = [' ']) {
     if (this.dbType === 'sql') {
       if (this.queryString.search) {
         const keyword = this.queryString.search;
@@ -120,13 +120,16 @@ export default class ApiFeature {
         console.log("No search parameter provided");
       }
     } else {
-      const searchQueries = fields.map(field => ({
-        [field]: { $regex: this.queryString.search, $options: 'i' }
-      }));
-      this.query.find({ $or: searchQueries });
+      if (typeof this.queryString.search === 'string' && this.queryString.search.trim()) {
+        const searchQueries = fields.map(field => ({
+          [field]: { $regex: this.queryString.search, $options: 'i' }
+        }));
+        this.query.find({ $or: searchQueries });
+      } 
     }
     return this;
   }
+  
   apply() {
     if (this.query.find) {
       return this.query;
